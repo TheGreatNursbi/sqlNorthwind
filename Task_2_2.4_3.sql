@@ -6,7 +6,7 @@ SELECT
 	C.ContactName AS 'Buyers'
 FROM dbo.Customers   AS C
 WHERE NOT EXISTS (
-					SELECT *
+					SELECT O.OrderID
                     FROM dbo.Orders AS O
                     WHERE O.CustomerID = C.CustomerID);
 go
